@@ -23,4 +23,4 @@ def read_root():
     df= df.drop_duplicates()
     stats = df['km/h'].describe()
     mean_speed_by_year = df.groupby(df['fecha'].str.slice(0, 4))['km/h'].mean()
-    return {"stats": stats.to_dict(), "mean_speed_by_year": mean_speed_by_year.to_dict()}
+    return {"stats": stats.to_dict(), "mean_speed_by_year": mean_speed_by_year.to_dict(), "data": df.to_dict()}
